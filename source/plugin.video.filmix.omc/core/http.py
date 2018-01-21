@@ -312,15 +312,23 @@ class HttpData:
             
         try:
             for div in center_menu.find_all('article', class_='shortstory'):
-                
+
                 div_short = div.find('div', class_='short') #.find('a', class_='watch')
                 movie_name = div.find('div', class_='name-block').find('h2', class_='name').find('a').get_text()
+
                 not_movie = True
-                
+                info = {}
+                movie = {}
+
                 try:
                     not_movie_test = div.find('span', class_='not-movie').get_text()
                 except:
                     not_movie = False
+
+                try:
+                    movie['originaltitle'] = div.find('div', class_='origin-name').get_text()
+                except:
+                    movie['originaltitle'] = ''
 
                 try:
                     quality = div.find('div', class_='full').find('div', class_='quality').get_text().strip()
@@ -328,37 +336,60 @@ class HttpData:
                     quality = ''
 
                 dop_information = []
-                
+
                 try:
                     year = div.find('div', class_='item year').find('a').get_text().strip()
                     dop_information.append(year)
+                    info['year'] = year
                 except:
+                    info['year'] = ''
                     pass
 
                 try:
                     genre = div.find('div', class_='category').find(class_='item-content').get_text().strip()
                     dop_information.append(genre)
+                    info['genre'] = genre
                 except:
+                    info['genre'] = ''
                     print traceback.format_exc()
 
-                information = ''
-                if(len(dop_information) > 0):
-                    information = '[COLOR white]['+', '.join(dop_information)+'][/COLOR]'
+                try:
+                    info['rating'] = int(
+                        div.find('span', class_='like-count-wrap').find('span', class_='count').get_text())
+                except:
+                    info['rating'] = 0
 
-                movieposter = div_short.find('img', class_='poster').get('src')
+                try:
+                    info['plot'] = div.find('p', attrs={'itemprop': 'description'}).get_text()
+                except:
+                    info['plot'] = 'Not Found'
+
+                information = ''
+                if (len(dop_information) > 0):
+                    information = '[COLOR white][' + ', '.join(dop_information) + '][/COLOR]'
+
+                movieposter = div_short.find('a', class_='fancybox').get('href')
                 movie_url = div_short.find('a', class_='watch').get('href')
                 movie_id = re.compile('/([\d]+)-', re.S).findall(movie_url)[0]
 
+                if not movieposter.startswith('http'):
+                    movieposter = SITE_URL + movieposter
+
                 result['data'].append({
-                        'url': movie_url,
-                        'id': movie_id,
-                        'not_movie': not_movie,
-                        'quality': self.format_quality(quality),
-                        'year': information,
-                        # 'name': '[' + str(data['search_start']) + ', ' + str(result['page']['pagenum']) + '] ' + movie_name.strip(),
-                        'name': movie_name.strip(),
-                        'img': None if not movieposter else movieposter
-                    })
+                    'url': movie_url,
+                    'id': movie_id,
+                    'not_movie': not_movie,
+                    'quality': self.format_quality(quality),
+                    'year': info['year'],
+                    'genre': info['genre'],
+                    # 'year': information,
+                    'title': movie_name.strip(),
+                    'originaltitle': movie['originaltitle'],
+                    'plot': info['plot'],
+                    'rating': info['rating'],
+                    'img': None if not movieposter else movieposter
+                })
+
         except:
             print traceback.format_exc()
             # self.dev_log({ 'err': traceback.format_exc() })
