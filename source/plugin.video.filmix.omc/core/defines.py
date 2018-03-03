@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 #SITE_DOMAIN = 'filmix.me'
-SITE_DOMAIN = 'filmix.cc'
+#SITE_DOMAIN = 'filmix.cc'
+SITE_DOMAIN = 'filmix.info'
 SITE_URL = 'http://'+SITE_DOMAIN
-PLUGIN_ID = 'plugin.video.filmix.net.dev'
+PLUGIN_ID = 'plugin.video.filmix.omc'
 CACHE_DATABASE = 'filmix.cache.db'
 COOKIE_FILE = 'filmix_cookie.txt'
 
