@@ -167,8 +167,8 @@ class SearchList(AbstactList):
         #page_url = "search/index/index/usersearch/"+params['usersearch']
         
         search_params = {
-            #'scf': 'fx',
-            'sdc': 'fx',
+            'scf': 'fx',
+            #'sdc': 'fx',
             'story': 'blade',
             'search_start': 0,
             'do': 'search',
