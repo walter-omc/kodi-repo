@@ -1,0 +1,1 @@
+git -c diff.mnemonicprefix=false -c core.quotepath=false push -v --tags origin master:master

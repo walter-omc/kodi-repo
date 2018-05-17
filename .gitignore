@@ -2,3 +2,4 @@
 .bat
 .sh
 generate.py
+checkit/*
