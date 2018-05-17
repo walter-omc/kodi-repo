@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-	<addon id="plugin.video.filmix.omc" name="Filmix OMC" version="0.0.9" provider-name="Walter OMC">
+	<addon id="plugin.video.filmix.omc" name="Filmix OMC" version="0.1.0" provider-name="Walter OMC">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.xbmcup" version="0.2.1"/>
