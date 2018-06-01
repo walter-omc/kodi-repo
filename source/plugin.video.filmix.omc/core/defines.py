@@ -4,8 +4,11 @@
 #SITE_DOMAIN = 'filmix.cc'
 #SITE_DOMAIN = 'filmix.info'
 #SITE_DOMAIN = 'filmix.nl'
-SITE_DOMAIN = 'filmix.co'
-SITE_URL = 'https://'+SITE_DOMAIN
+#SITE_DOMAIN = 'filmix.co'
+SITE_DOMAIN = 'filmixme.net'
+#SITE_PROTO = 'https'
+SITE_PROTO = 'http'
+SITE_URL = SITE_PROTO + '://' + SITE_DOMAIN
 PLUGIN_ID = 'plugin.video.filmix.omc'
 CACHE_DATABASE = 'filmix.cache.db'
 COOKIE_FILE = 'filmix_cookie.txt'
