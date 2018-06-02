@@ -5,7 +5,8 @@
 #SITE_DOMAIN = 'filmix.info'
 #SITE_DOMAIN = 'filmix.nl'
 #SITE_DOMAIN = 'filmix.co'
-SITE_DOMAIN = 'filmixme.net'
+#SITE_DOMAIN = 'filmixme.net'
+SITE_DOMAIN = 'net.filmix.co'
 #SITE_PROTO = 'https'
 SITE_PROTO = 'http'
 SITE_URL = SITE_PROTO + '://' + SITE_DOMAIN
