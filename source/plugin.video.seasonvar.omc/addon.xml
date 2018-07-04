@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.seasonvar.omc" name="Seasonvar" version="0.0.1" provider-name="Walter OMC">
+  <requires>
+    <import addon="script.module.requests" version="2.12.4"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Seasonvar plugin.</summary>
+    <description lang="en">Simply play episodes from seasonvar.ru.</description>
+    <platform>all</platform>
+    <language>en</language>
+    <disclaimer></disclaimer>
+  </extension>
+</addon>
