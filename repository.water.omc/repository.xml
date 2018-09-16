@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-	<addon id="plugin.video.filmix.omc" name="Filmix OMC" version="0.1.3" provider-name="Walter OMC">
+<addon id="plugin.video.filmix.omc" name="Filmix OMC" version="0.2.0" provider-name="Walter OMC">
 	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-		<import addon="script.module.xbmcup" version="0.2.1"/>
+		<import addon="script.module.requests" version="2.12.4"/>
 	</requires>
-	<extension point="xbmc.python.pluginsource" provides="video" library="addon.py">
+	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Filmix OMC</summary>
-		<description>
-			 Filmix - Вашему вниманию полнометражное кино и телесериалы, мультфильмы, трейлеры.
-		</description>
+		<summary lang="en">Filmix plugin.</summary>
+		<description lang="en">Simply play episodes from filmix.co.</description>
 		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum>http://xbmc.ru/forum/showthread.php?t=11719</forum>
-		<email>walomc@yandex.ru</email>
+		<language>en</language>
+		<disclaimer></disclaimer>
 	</extension>
 </addon>
 
@@ -34,16 +30,5 @@
     <language>en</language>
     <disclaimer></disclaimer>
   </extension>
-</addon>
-
-<addon id="script.module.xbmcup" name="XbmcUp" version="0.2.1" provider-name="HAL9000">
-    <requires>
-        <import addon="xbmc.python" version="2.14.0"/>
-    </requires>
-    <extension library="service.py" point="xbmc.service" start="startup"/>
-    <extension point="xbmc.python.module" library="lib"/>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-    </extension>
 </addon>
 </addons>

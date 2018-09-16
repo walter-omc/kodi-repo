@@ -1,5 +1,7 @@
 .svn
 .bat
 .sh
+.pyo
 generate.py
 checkit/*
+.idea
